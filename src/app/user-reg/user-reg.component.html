@@ -1,0 +1,51 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-5">
+            <div class="row">
+                
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div class="row">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                            <h1 class="text-primary">User Registration</h1>
+                        </div>
+                        <div class="row mt-5 g-3">
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label for="" class="form-label text-secondary">Name</label>
+                                <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter name...">
+                            </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label for="" class="form-label text-secondary">Email</label>
+                                <input type="text" class="form-control" name="email" [(ngModel)]="email" placeholder="Enter email...">
+                            </div>
+                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <label for="" class="form-label text-secondary">Address</label>
+                                <textarea name="" class="form-control" id="" cols="30" rows="5" name="address" [(ngModel)]="address" placeholder="Enter address..."></textarea>
+                            </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label for="" class="form-label text-secondary">Phone</label>
+                                <input type="text" class="form-control" name="phone" [(ngModel)]="phone" placeholder="Enter phone number...">
+                            </div>
+                            
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label for="" class="form-label text-secondary">Password</label>
+                                <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Enter password...">
+                            </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label for="" class="form-label text-secondary">Confirm Password</label>
+                                <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Enter password once more...">
+                            </div>
+                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-4 d-flex justify-content-center mb-4">
+                                <button class="btn btn-primary p-2 mx-3" (click)="readValues()">Register </button>
+                            </div>
+                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-4 d-flex justify-content-center mb-5">
+                                <button class="p-2 btn btn-outline-dark mx-3" routerLink="/"> Go to Admin Login</button>
+                                <button class="p-2 btn btn-outline-dark mx-3" routerLink="/userLogin">Go to User Login </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

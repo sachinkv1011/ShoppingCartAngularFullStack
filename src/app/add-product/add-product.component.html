@@ -1,0 +1,42 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+                    <img height="300px" src="assets/images/addfriend.svg" alt="">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5">
+                    <div class="row g-3 mt-4">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                            <h1 class="text-primary">Add Product</h1>
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label text-secondary">Title</label>
+                            <input type="text" class="form-control"  name="title" [(ngModel)]="title" placeholder="Enter title...">
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label text-secondary">Image Url</label>
+                            <input type="text" class="form-control" name="imageUrl" [(ngModel)]="imageUrl" placeholder="Enter image url...">
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label text-secondary">Category</label>
+                            <input type="text" class="form-control" name="category" [(ngModel)]="category" placeholder="Enter category...">
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label text-secondary">Description</label>
+                            <input type="text" class="form-control" name="description" [(ngModel)]="description" placeholder="Enter description...">
+                        </div>
+                        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label text-secondary">Price</label>
+                            <input type="text" class="form-control" name="price" [(ngModel)]="price" placeholder="Enter price...">
+                        </div>
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center mt-4">
+                            <button class="btn btn-primary" (click)="readValues()">Add Product ---></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

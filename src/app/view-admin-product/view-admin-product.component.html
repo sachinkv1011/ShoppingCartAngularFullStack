@@ -1,0 +1,86 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h1 class="text-center text-primary mb-4">Products</h1>
+                </div>
+                <div
+                    class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5 d-flex justify-content-center">
+                    <div style="width: 50%;" class="d-flex">
+                        <input type="text" class="form-control mx-2" placeholder="🔍Search products..." name="title"
+                            [(ngModel)]="title" (ngModelChange)="readValues()">
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-2"
+                    *ngIf="searchData.length!=0">
+                    <h5>Search Result</h5>
+                    <table class="table justify-content-center table-bordered mb-5">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="text-center" scope="col">Image</th>
+                                <th class="text-center" scope="col">Title</th>
+                                <th class="text-center" scope="col">Category</th>
+                                <th class="text-center" scope="col">Description</th>
+                                <th class="text-center" scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of searchData">
+                                <td class="text-center"><img src="{{i.imageUrl}}" height="50px" width="50px" alt=""
+                                        class="rounded"></td>
+                                <td class="text-center">{{i.title}}</td>
+                                <td class="text-center">{{i.category}}</td>
+                                <td class="text-center">{{i.description}}</td>
+                                <td class="text-center">{{i.price}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-5">
+                    <h5 *ngIf="searchData.length!=0">All Products</h5>
+                    <table class="table justify-content-center table-striped table-bordered mb-5">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="text-center" scope="col">Image</th>
+                                <th class="text-center" scope="col">Title</th>
+                                <th class="text-center" scope="col">Category</th>
+                                <th class="text-center" scope="col">Description</th>
+                                <th class="text-center" scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngIf="loading; then loadingScreen; else dataScreen"></ng-container>
+                            <ng-template #loadingScreen class="text-center">
+                                <div class="spinner-grow text-danger" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow text-warning" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow text-info" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </ng-template>
+                            <ng-template #dataScreen>
+                                <tr *ngFor="let i of products">
+                                    <td class="text-center"><img src="{{i.imageUrl}}" height="50px" width="50px" alt=""
+                                            class="rounded"></td>
+                                    <td class="text-center">{{i.title}}</td>
+                                    <td class="text-center">{{i.category}}</td>
+                                    <td class="text-center">{{i.description}}</td>
+                                    <td class="text-center">{{i.price}}</td>
+                                </tr>
+                            </ng-template>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

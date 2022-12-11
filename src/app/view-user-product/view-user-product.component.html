@@ -1,0 +1,74 @@
+<app-user-navbar></app-user-navbar>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-5">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h1 class="text-center text-primary mb-4">Products</h1>
+                </div>
+
+                <div  class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5 d-flex justify-content-center">
+                    <div style="width: 50%;" class="d-flex">
+                        <input type="text" class="form-control mx-2" placeholder="🔍 Search products..." name="title"
+                            [(ngModel)]="title" (ngModelChange)="readValues()">
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-5">
+                    <h5 *ngIf="searchData.length!=0">Search Result</h5>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3"  *ngFor="let i of searchData">
+                        <div class="card">
+                            <img height="300px" src="{{i.imageUrl}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 style="height: 30px;" class="card-title"><strong>{{i.title}}</strong></h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li style="height:50px;" class="list-group-item">Category: {{i.category}}</li>
+                                <li style="height:50px;" class="list-group-item">Description: {{i.description}}</li>
+                                <li style="height:50px;" class="list-group-item">Price: {{i.price}}</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="btn btn-primary">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ng-container *ngIf="loading; then loadingScreen; else dataScreen"></ng-container>
+                <ng-template #loadingScreen>
+                    <div style="height: 3rem;width: 100%;display: flex;align-items: center; justify-content: center;">
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #dataScreen>
+                    <h5 *ngIf="searchData.length!=0" class="mt-5">All Products</h5>
+                    <ng-container *ngFor="let i of products">
+                        <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 mb-5">
+                            <div class="card">
+                                <img height="300px" src="{{i.imageUrl}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 style="height: 30px;" class="card-title"><strong>{{i.title}}</strong></h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li style="height:50px;" class="list-group-item">Category: {{i.category}}</li>
+                                    <li style="height:50px;" class="list-group-item">Description: {{i.description}}</li>
+                                    <li style="height:50px;" class="list-group-item">Price: {{i.price}}</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-template>
+            </div>
+        </div>
+    </div>
